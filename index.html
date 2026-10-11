@@ -36,11 +36,13 @@
     .seasonal-location { margin-bottom: 32px; }
     .seasonal-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; max-width: 1000px; margin: 0 auto 32px; }
     .seasonal-card { overflow: hidden; border: 1px solid #eedee6; border-radius: 20px; background: #fff; }
-    .seasonal-card img { display: block; width: 100%; height: 250px; object-fit: contain; background: #fff; }
+    .seasonal-image { position: relative; height: 250px; aspect-ratio: 1414 / 2000; max-width: 100%; margin: 0 auto; overflow: hidden; }
+    .seasonal-image img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .coming-soon-watermark { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; text-align: center; font-family: "Playfair Display", serif; font-size: 24px; font-weight: 400; line-height: 1.6; letter-spacing: .12em; color: rgba(255, 255, 255, .72); text-shadow: 0 1px 8px rgba(68, 45, 55, .25); background: rgba(70, 45, 55, .08); pointer-events: none; }
     .seasonal-card-text { padding: 20px 12px; }
     .seasonal-card-text h4 { margin: 0 0 12px; font-size: 14px; letter-spacing: .08em; color: #b86f90; }
     .seasonal-card-text p { margin: 0; font-size: 15px; line-height: 1.8; }
-    @media (max-width: 700px) { .seasonal-grid { grid-template-columns: 1fr; max-width: 380px; gap: 20px; } .seasonal-card img { height: 280px; } }
+    @media (max-width: 700px) { .seasonal-grid { grid-template-columns: 1fr; max-width: 380px; gap: 20px; } .seasonal-image { height: 280px; } }
   </style>
 </head>
 
@@ -149,15 +151,15 @@
           <p class="seasonal-location">in 沖縄アウトレットモール あしびなー</p>
           <div class="seasonal-grid">
             <article class="seasonal-card">
-              <img src="images/news1.PNG" alt="ハロウィンイベントのイメージ" loading="lazy">
+              <div class="seasonal-image"><img src="images/news1.PNG" alt="ハロウィンイベントのイメージ" loading="lazy"></div>
               <div class="seasonal-card-text"><h4>HALLOWEEN EVENT</h4><p>2026.10.31</p></div>
             </article>
             <article class="seasonal-card">
-              <img src="images/news2.PNG" alt="クリスマスイベントのイメージ" loading="lazy">
+              <div class="seasonal-image"><img src="images/news2.PNG" alt="クリスマスイベントのイメージ" loading="lazy"><span class="coming-soon-watermark">COMING<br>SOON</span></div>
               <div class="seasonal-card-text"><h4>CHRISTMAS EVENT</h4><p>2026.12.12 - 13<br>2026.12.19 - 20</p></div>
             </article>
             <article class="seasonal-card">
-              <img src="images/news3.PNG" alt="お正月イベントのイメージ" loading="lazy">
+              <div class="seasonal-image"><img src="images/news3.PNG" alt="お正月イベントのイメージ" loading="lazy"><span class="coming-soon-watermark">COMING<br>SOON</span></div>
               <div class="seasonal-card-text"><h4>NEW YEAR EVENT</h4><p>2027.01.01 - 03</p></div>
             </article>
           </div>
